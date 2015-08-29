@@ -10,6 +10,7 @@ namespace ShoppingCartMVC.Models
         public int CategoryID { get; set; }
         public string Title { get; set; }
         public string ImageUrl { get; set; }
+
         public virtual ICollection<Product> Products { get; set; }
     }
 }

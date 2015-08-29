@@ -1,14 +1,10 @@
 ﻿using ShoppingCartMVC.Models;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace ShoppingCartMVC.DAL
 {
-    public class DataInitialization :
- DropCreateDatabaseIfModelChanges<ShoppingCartContext>
+    public class DataInitialization : DropCreateDatabaseIfModelChanges<ShoppingCartContext>
     {
         protected override void Seed(ShoppingCartContext context)
         {
@@ -33,7 +29,8 @@ namespace ShoppingCartMVC.DAL
                     ImageUrl = "~/Images/CategoryGraphicsCards.png"
                 },
             };
-            categories.ForEach(c => context.Categories.Add(c));
+            categories.ForEach(c => context.Categories.Add(c));
+
 
             var products = new List<Product> {
                 new Product
@@ -119,9 +116,7 @@ namespace ShoppingCartMVC.DAL
 
             };
             products.ForEach(b => context.Products.Add(b));
-            context.SaveChanges();
-
-
+            context.SaveChanges();
         }
     }
-} 
+}
